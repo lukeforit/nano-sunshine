@@ -1,0 +1,12 @@
+*.iml
+.gradle/
+.idea/
+.DS_Store
+build/
+captures/
+gradle/
+libs/
+local.properties
+
+#API KEY
+app/src/main/res/values/key.xml
