@@ -9,6 +9,6 @@ import retrofit2.Response;
  * Created by Łukasz on 11.11.2017.
  */
 
-interface IWeatherDataSource {
+public interface IWeatherDataSource {
     Single<Response<CityForecast>> weather();
 }

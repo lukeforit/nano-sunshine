@@ -4,15 +4,22 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.green.rabbit.sunshine.app.data.source.IWeatherDataSource;
+import com.green.rabbit.sunshine.app.feature.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+import javax.inject.Inject;
+
+
+public class MainActivity extends BaseActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
+
+    @Inject
+    IWeatherDataSource weatherDataSource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
             return true;
-        }  else if (item.getItemId() == R.id.action_location){
+        } else if (item.getItemId() == R.id.action_location) {
             onPreferedLocationInMap();
             return true;
         }
@@ -52,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void onPreferedLocationInMap(){
+    private void onPreferedLocationInMap() {
         Intent i = new Intent(Intent.ACTION_VIEW);
         Uri.Builder uriBuilder = new Uri.Builder();
         uriBuilder.scheme("geo").opaquePart("0,0").appendQueryParameter("q",
