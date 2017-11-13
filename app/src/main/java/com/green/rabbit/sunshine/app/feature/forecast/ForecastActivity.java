@@ -1,4 +1,4 @@
-package com.green.rabbit.sunshine.app;
+package com.green.rabbit.sunshine.app.feature.forecast;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,26 +8,27 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.green.rabbit.sunshine.app.data.source.IWeatherDataSource;
+import com.green.rabbit.sunshine.app.R;
+import com.green.rabbit.sunshine.app.SettingsActivity;
 import com.green.rabbit.sunshine.app.feature.BaseActivity;
 
 import javax.inject.Inject;
 
 
-public class MainActivity extends BaseActivity {
+public class ForecastActivity extends BaseActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = ForecastActivity.class.getSimpleName();
 
     @Inject
-    IWeatherDataSource weatherDataSource;
+    ForecastFragment forecastFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_forecast);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new ForecastFragment())
+                    .add(R.id.container, forecastFragment)
                     .commit();
         }
     }
