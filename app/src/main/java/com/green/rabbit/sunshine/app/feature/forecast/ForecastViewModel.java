@@ -1,8 +1,12 @@
 package com.green.rabbit.sunshine.app.feature.forecast;
 
+import android.content.Context;
 import android.databinding.BaseObservable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.green.rabbit.sunshine.app.data.model.CityForecast;
+import com.green.rabbit.sunshine.app.feature.forecast.list.ForecastAdapter;
 
 import javax.inject.Inject;
 
@@ -13,14 +17,31 @@ import javax.inject.Inject;
 public class ForecastViewModel extends BaseObservable {
 
     @Inject
+    ForecastAdapter adapter;
+
+    @Inject
+    Context activityContext;
+
+    private RecyclerView.LayoutManager layoutManager;
+
+    @Inject
     public ForecastViewModel() {
+        layoutManager = new LinearLayoutManager(activityContext);
     }
 
-    public void update(CityForecast body) {
+    public ForecastAdapter getAdapter() {
+        return adapter;
+    }
+
+    public RecyclerView.LayoutManager getLayoutManager() {
+        return layoutManager;
+    }
+
+    void update(CityForecast body) {
 
     }
 
-    public void showError() {
+    void showError() {
 
     }
 }

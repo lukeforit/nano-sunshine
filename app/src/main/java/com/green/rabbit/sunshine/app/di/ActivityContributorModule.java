@@ -2,6 +2,7 @@ package com.green.rabbit.sunshine.app.di;
 
 import com.green.rabbit.sunshine.app.DetailActivity;
 import com.green.rabbit.sunshine.app.feature.forecast.ForecastActivity;
+import com.green.rabbit.sunshine.app.feature.forecast.ForecastModule;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -12,7 +13,7 @@ import dagger.android.ContributesAndroidInjector;
 @Module
 public abstract class ActivityContributorModule {
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = ForecastModule.class)
     abstract ForecastActivity contributeMainActivity();
 
     @ContributesAndroidInjector
