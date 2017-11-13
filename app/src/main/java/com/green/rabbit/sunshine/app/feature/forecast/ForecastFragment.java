@@ -60,24 +60,24 @@ public class ForecastFragment extends Fragment {
 
         presenter.loadData();
 
-        View rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
+//        View rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
 
-        mArrayAdapter = new ArrayAdapter<String>(getActivity(),R.layout.list_item_forecast,R.id.list_item_forecast_textview);
+//        mArrayAdapter = new ArrayAdapter<String>(getActivity(),R.layout.list_item_forecast,R.id.list_item_forecast_textview);
 
-        ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
-        listView.setAdapter(mArrayAdapter);
+//        ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
+//        listView.setAdapter(mArrayAdapter);
+//
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getActivity().getApplicationContext(), mArrayAdapter.getItem(position), Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(getActivity(),DetailActivity.class);
+//                intent.putExtra(Intent.EXTRA_TEXT, mArrayAdapter.getItem(position));
+//                startActivity(intent);
+//            }
+//        });
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity().getApplicationContext(), mArrayAdapter.getItem(position), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(),DetailActivity.class);
-                intent.putExtra(Intent.EXTRA_TEXT, mArrayAdapter.getItem(position));
-                startActivity(intent);
-            }
-        });
-
-        return rootView;
+        return binding.getRoot();
     }
 
     @Override

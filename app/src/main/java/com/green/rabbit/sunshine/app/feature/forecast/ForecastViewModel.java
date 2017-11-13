@@ -38,7 +38,7 @@ public class ForecastViewModel extends BaseObservable {
     }
 
     void update(CityForecast body) {
-
+        adapter.setData(body);
     }
 
     void showError() {
