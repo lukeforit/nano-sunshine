@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.green.rabbit.sunshine.app.data.model.CityForecast;
+import com.green.rabbit.sunshine.app.feature.BaseActivity;
 import com.green.rabbit.sunshine.app.feature.forecast.list.ForecastAdapter;
 
 import javax.inject.Inject;
@@ -20,7 +21,7 @@ public class ForecastViewModel extends BaseObservable {
     ForecastAdapter adapter;
 
     @Inject
-    Context activityContext;
+    BaseActivity activityContext;
 
     private RecyclerView.LayoutManager layoutManager;
 
@@ -35,6 +36,10 @@ public class ForecastViewModel extends BaseObservable {
 
     public RecyclerView.LayoutManager getLayoutManager() {
         return layoutManager;
+    }
+
+    public void setOnForecastItemClickListener(ForecastAdapter.OnItemClickListener listener) {
+        adapter.setOnItemClickListener(listener);
     }
 
     void update(CityForecast body) {

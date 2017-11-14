@@ -55,7 +55,7 @@ public class ForecastFragment extends Fragment {
                              Bundle savedInstanceState) {
         FragmentForecastBinding binding = DataBindingUtil.inflate(inflater,
                 R.layout.fragment_forecast, container, false);
-        binding.setVariable(BR.vm, presenter.forecastViewModel);
+        binding.setVariable(BR.vm, presenter.getForecastViewModel());
         binding.executePendingBindings();
 
         presenter.loadData();

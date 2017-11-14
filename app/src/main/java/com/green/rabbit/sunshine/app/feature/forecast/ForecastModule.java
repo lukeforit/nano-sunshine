@@ -2,6 +2,8 @@ package com.green.rabbit.sunshine.app.feature.forecast;
 
 import android.content.Context;
 
+import com.green.rabbit.sunshine.app.feature.BaseActivity;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -11,7 +13,7 @@ import dagger.Provides;
 @Module
 public class ForecastModule {
     @Provides
-    public Context provideContext(ForecastActivity activity) {
+    public BaseActivity provideContext(ForecastActivity activity) {
         return activity;
     }
 }

@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.green.rabbit.sunshine.app.R;
+import com.green.rabbit.sunshine.app.common.OnViewHolderClickListener;
 import com.green.rabbit.sunshine.app.data.model.CityForecast;
+import com.green.rabbit.sunshine.app.data.model.Forecast;
 import com.green.rabbit.sunshine.app.databinding.ListItemForecastBinding;
 
 import javax.inject.Inject;
@@ -15,9 +17,11 @@ import javax.inject.Inject;
  * Created by Łukasz on 13.11.2017.
  */
 
-public class ForecastAdapter extends RecyclerView.Adapter<ForecastViewHolder> {
+public class ForecastAdapter extends RecyclerView.Adapter<ForecastViewHolder>
+        implements OnViewHolderClickListener {
 
     private CityForecast cityForecast;
+    private OnItemClickListener onItemClickListener;
 
     @Inject
     public ForecastAdapter() {
@@ -28,7 +32,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastViewHolder> {
         ListItemForecastBinding binding = DataBindingUtil.inflate(
                 LayoutInflater.from(parent.getContext()), R.layout.list_item_forecast,
                 parent, false);
-        return new ForecastViewHolder(binding);
+        return new ForecastViewHolder(binding, this);
     }
 
     @Override
@@ -44,5 +48,20 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastViewHolder> {
     public void setData(CityForecast data) {
         cityForecast = data;
         notifyDataSetChanged();
+    }
+
+    @Override
+    public void onClick(int position) {
+        if (onItemClickListener != null) {
+            onItemClickListener.onItemClick(cityForecast.getForecasts()[position]);
+        }
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(Forecast item);
     }
 }
