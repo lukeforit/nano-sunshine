@@ -62,7 +62,7 @@ public class ForecastPresenter implements ForecastAdapter.OnItemClickListener {
 
     @Override
     public void onItemClick(Forecast item) {
-        navigator.startDailyForecastActivity();
+        navigator.startDailyForecastActivity(item);
     }
 
     public ForecastViewModel getForecastViewModel() {

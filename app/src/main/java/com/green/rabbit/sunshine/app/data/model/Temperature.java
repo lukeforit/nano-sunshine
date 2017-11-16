@@ -2,10 +2,12 @@ package com.green.rabbit.sunshine.app.data.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
 /**
  * Created by Łukasz on 11.11.2017.
  */
-
+@Parcel(Parcel.Serialization.BEAN)
 public class Temperature {
     private double day;
     private double min;
@@ -15,6 +17,9 @@ public class Temperature {
     private double evening;
     @SerializedName("morn")
     private double morning;
+
+    public Temperature() {
+    }
 
     public Temperature(double day, double min, double max, double night, double evening, double morning) {
         this.day = day;

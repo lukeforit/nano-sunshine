@@ -1,6 +1,6 @@
 package com.green.rabbit.sunshine.app.di;
 
-import com.green.rabbit.sunshine.app.DetailActivity;
+import com.green.rabbit.sunshine.app.feature.forecast.daily.DailyForecastActivity;
 import com.green.rabbit.sunshine.app.feature.forecast.ForecastActivity;
 import com.green.rabbit.sunshine.app.feature.forecast.ForecastModule;
 
@@ -17,6 +17,6 @@ public abstract class ActivityContributorModule {
     abstract ForecastActivity contributeMainActivity();
 
     @ContributesAndroidInjector
-    abstract DetailActivity contributeDetailActivity();
+    abstract DailyForecastActivity contributeDetailActivity();
 
 }

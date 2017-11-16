@@ -2,10 +2,13 @@ package com.green.rabbit.sunshine.app.data.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
+
 /**
  * Created by Łukasz on 11.11.2017.
  */
-
+@Parcel(Parcel.Serialization.BEAN)
 public class Forecast {
     @SerializedName("dt")
     private int dateTime;
@@ -18,6 +21,9 @@ public class Forecast {
     @SerializedName("deg")
     private int degrees;
     private int clouds;
+
+    public Forecast() {
+    }
 
     public Forecast(int dateTime, Temperature temp, double pressure, double humidity, Weather[] weather, double windSpeed, int degrees, int clouds) {
         this.dateTime = dateTime;

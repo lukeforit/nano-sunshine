@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DetailActivity"
+            android:name=".feature.forecast.daily.DailyForecastActivity"
             android:label="@string/title_activity_detail"
             android:parentActivityName=".feature.forecast.ForecastActivity">
             <meta-data

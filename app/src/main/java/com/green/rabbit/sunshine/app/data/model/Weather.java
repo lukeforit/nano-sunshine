@@ -2,16 +2,22 @@ package com.green.rabbit.sunshine.app.data.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
+
 /**
  * Created by Łukasz on 11.11.2017.
  */
-
+@Parcel(Parcel.Serialization.BEAN)
 public class Weather {
     private int id;
     @SerializedName("main")
     private String parameters;
     private String description;
     private String icon;
+
+    public Weather() {
+    }
 
     public Weather(int id, String parameters, String description, String icon) {
         this.id = id;
