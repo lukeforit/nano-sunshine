@@ -1,6 +1,5 @@
 package com.green.rabbit.sunshine.app.feature.forecast;
 
-import android.content.Context;
 import android.databinding.BaseObservable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;

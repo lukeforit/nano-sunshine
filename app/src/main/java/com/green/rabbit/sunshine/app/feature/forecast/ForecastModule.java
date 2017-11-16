@@ -1,7 +1,5 @@
 package com.green.rabbit.sunshine.app.feature.forecast;
 
-import android.content.Context;
-
 import com.green.rabbit.sunshine.app.feature.BaseActivity;
 
 import dagger.Module;

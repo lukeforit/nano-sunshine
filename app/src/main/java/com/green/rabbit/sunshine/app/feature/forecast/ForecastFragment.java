@@ -11,11 +11,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
 import com.green.rabbit.sunshine.app.BR;
 import com.green.rabbit.sunshine.app.R;
-import com.green.rabbit.sunshine.app.data.model.CityForecast;
 import com.green.rabbit.sunshine.app.databinding.FragmentForecastBinding;
 
 import java.text.SimpleDateFormat;

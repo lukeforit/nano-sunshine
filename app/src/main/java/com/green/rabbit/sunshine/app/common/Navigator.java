@@ -2,11 +2,10 @@ package com.green.rabbit.sunshine.app.common;
 
 import android.content.Intent;
 
-import com.green.rabbit.sunshine.app.feature.forecast.daily.DailyForecastActivity;
 import com.green.rabbit.sunshine.app.data.model.Forecast;
 import com.green.rabbit.sunshine.app.feature.BaseActivity;
+import com.green.rabbit.sunshine.app.feature.forecast.daily.DailyForecastActivity;
 
-import org.parceler.Parcel;
 import org.parceler.Parcels;
 
 import javax.inject.Inject;

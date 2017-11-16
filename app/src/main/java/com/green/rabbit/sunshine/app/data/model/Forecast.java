@@ -3,7 +3,6 @@ package com.green.rabbit.sunshine.app.data.model;
 import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
-import org.parceler.ParcelConstructor;
 
 /**
  * Created by Łukasz on 11.11.2017.
