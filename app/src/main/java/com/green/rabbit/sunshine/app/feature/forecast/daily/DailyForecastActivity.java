@@ -97,19 +97,6 @@ public class DailyForecastActivity extends BaseActivity {
         @Override
         public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
             inflater.inflate(R.menu.detailfragment, menu);
-
-//            Intent i = new Intent()
-//                    .setAction(Intent.ACTION_SEND)
-//                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
-//                    .setType("text/plain")
-//                    .putExtra(Intent.EXTRA_TEXT,mDetailText + " " + CONST_TEXT);
-//            ShareActionProvider sap = (ShareActionProvider) MenuItemCompat.getActionProvider(menu.findItem(R.id.action_share));
-//            if (sap != null) {
-//                Log.d(TAG, "Set share: " + mDetailText + " " + CONST_TEXT);
-//                sap.setShareIntent(i);
-//            }
-//            else
-//                Log.d(TAG, "No action provider");
         }
 
         @Override

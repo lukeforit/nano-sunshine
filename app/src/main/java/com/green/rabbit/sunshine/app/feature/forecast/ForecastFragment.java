@@ -54,13 +54,25 @@ public class ForecastFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.forecastfragment, menu);
+        inflater.inflate(R.menu.menu_fragment_forecast, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_refresh) {
             updateWeather();
+            return true;
+        }
+        if (item.getItemId() == R.id.action_browser) {
+            presenter.showRawDataInBrowser();
+            return true;
+        }
+        if (item.getItemId() == R.id.action_map) {
+            presenter.showOnMap();
+            return true;
+        }
+        if (item.getItemId() == R.id.action_share) {
+            presenter.share();
             return true;
         }
         return super.onOptionsItemSelected(item);

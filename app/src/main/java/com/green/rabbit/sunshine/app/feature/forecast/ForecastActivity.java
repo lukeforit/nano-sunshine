@@ -52,24 +52,8 @@ public class ForecastActivity extends BaseActivity {
         if (id == R.id.action_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
             return true;
-        } else if (item.getItemId() == R.id.action_location) {
-            onPreferedLocationInMap();
-            return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void onPreferedLocationInMap() {
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        Uri.Builder uriBuilder = new Uri.Builder();
-        uriBuilder.scheme("geo").opaquePart("0,0").appendQueryParameter("q",
-                PreferenceManager.getDefaultSharedPreferences(this)
-                        .getString(getString(R.string.pref_location_key), getString(R.string.pref_location_default)));
-        i.setData(uriBuilder.build());
-        //Log.d(TAG, uriBuilder.build().toString());
-        if (i.resolveActivity(getPackageManager()) != null)
-            startActivity(i);
-        else Log.d(TAG, "No map application");
     }
 }

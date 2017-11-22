@@ -1,6 +1,11 @@
 package com.green.rabbit.sunshine.app.feature.forecast;
 
-import com.green.rabbit.sunshine.app.common.Navigator;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v4.app.ShareCompat;
+
+import com.green.rabbit.sunshine.app.R;
+import com.green.rabbit.sunshine.app.common.ContextUtils;
 import com.green.rabbit.sunshine.app.data.model.CityForecast;
 import com.green.rabbit.sunshine.app.data.model.Forecast;
 import com.green.rabbit.sunshine.app.data.source.IWeatherDataSource;
@@ -24,14 +29,14 @@ public class ForecastPresenter implements ForecastAdapter.OnItemClickListener {
 
     private ForecastViewModel forecastViewModel;
 
-    private Navigator navigator;
+    private ContextUtils contextUtils;
 
     @Inject
     ForecastPresenter(IWeatherDataSource dataSource, ForecastViewModel forecastViewModel,
-                      Navigator navigator) {
+                      ContextUtils contextUtils) {
         this.dataSource = dataSource;
         this.forecastViewModel = forecastViewModel;
-        this.navigator = navigator;
+        this.contextUtils = contextUtils;
         this.forecastViewModel.setOnForecastItemClickListener(this);
     }
 
@@ -62,10 +67,41 @@ public class ForecastPresenter implements ForecastAdapter.OnItemClickListener {
 
     @Override
     public void onItemClick(Forecast item) {
-        navigator.startDailyForecastActivity(item);
+        contextUtils.startDailyForecastActivity(item);
     }
 
-    public ForecastViewModel getForecastViewModel() {
+    ForecastViewModel getForecastViewModel() {
         return forecastViewModel;
+    }
+
+    void showRawDataInBrowser() {
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://andfun-weather.udacity.com/weather"));
+        if (contextUtils.resolveActivity(intent)) {
+            contextUtils.startActivityByIntent(intent);
+        }
+    }
+
+    void showOnMap() {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        Uri uri = new Uri.Builder()
+                .scheme("geo").path("37.386051,-122.08384")
+                .appendQueryParameter("z", "1")
+                .build();
+        intent.setData(uri);
+        if (contextUtils.resolveActivity(intent)) {
+            contextUtils.startActivityByIntent(intent);
+        }
+    }
+
+    //TODO move to details to share the content passed to the activity
+    void share() {
+        Intent intent = ShareCompat.IntentBuilder.from(contextUtils.getActivityContext())
+                .setChooserTitle(R.string.action_share_title)
+                .setType("text/plain")
+                .setText("weather data").getIntent();
+        if (contextUtils.resolveActivity(intent)) {
+            contextUtils.startActivityByIntent(intent);
+        }
     }
 }
