@@ -10,14 +10,22 @@
     <string name="action_share">Share</string>
     <string name="action_share_title">Share</string>
 
-    <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_detail">Daily forecast</string>
     <string name="title_activity_settings">Settings</string>
+
     <string name="pref_location_key" translatable="false">location</string>
     <string name="pref_location_label">Location</string>
     <string name="pref_location_default" translatable="false">94043</string>
-    <string name="pref_units_key">units</string>
+
+    <string name="pref_units_key" translatable="false">units</string>
     <string name="pref_units_label">Tempreature units</string>
-    <string name="pref_units_default">Celsius</string>
+    <string name="pref_units_default" translatable="false">Celsius</string>
+
+    <string name="pref_icon_key" translatable="false">icon</string>
+    <string name="pref_icon_label">Show icon</string>
+    <string name="pref_icon_summary_on">Shown</string>
+    <string name="pref_icon_summary_off">Hidden</string>
+
     <string name="action_location">View location</string>
 
 

@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.android.databinding.library.baseAdapters.BR;
 import com.green.rabbit.sunshine.app.R;
-import com.green.rabbit.sunshine.app.SettingsActivity;
+import com.green.rabbit.sunshine.app.feature.settings.SettingsActivity;
 import com.green.rabbit.sunshine.app.data.model.Forecast;
 import com.green.rabbit.sunshine.app.databinding.FragmentDailyForecastBinding;
 import com.green.rabbit.sunshine.app.feature.BaseActivity;
@@ -27,6 +27,7 @@ public class DailyForecastActivity extends BaseActivity {
     public static final String BUNDLE_KEY_FORECAST =
             DailyForecastActivity.class.getSimpleName() + ".BUNDLE_KEY_FORECAST";
 
+    //FIXME: deliver fragment in a different way to fix app crashes on activity state changed (rotation)
     @Inject
     PlaceholderFragment fragment;
 

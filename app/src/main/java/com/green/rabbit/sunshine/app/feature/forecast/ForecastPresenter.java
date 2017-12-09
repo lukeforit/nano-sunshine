@@ -104,4 +104,8 @@ public class ForecastPresenter implements ForecastAdapter.OnItemClickListener {
             contextUtils.startActivityByIntent(intent);
         }
     }
+
+    public void navigateToSettings() {
+        contextUtils.startSettingsActivity();
+    }
 }

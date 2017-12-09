@@ -3,6 +3,7 @@ package com.green.rabbit.sunshine.app.di;
 import com.green.rabbit.sunshine.app.feature.forecast.ForecastActivity;
 import com.green.rabbit.sunshine.app.feature.forecast.ForecastModule;
 import com.green.rabbit.sunshine.app.feature.forecast.daily.DailyForecastActivity;
+import com.green.rabbit.sunshine.app.feature.settings.SettingsActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -19,4 +20,6 @@ public abstract class ActivityContributorModule {
     @ContributesAndroidInjector
     abstract DailyForecastActivity contributeDetailActivity();
 
+    @ContributesAndroidInjector
+    abstract SettingsActivity contributeSettingsActivity();
 }

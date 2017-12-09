@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fragment xmlns:adnroid="http://schemas.android.com/apk/res/android"
+    adnroid:id="@+id/activity_settings"
+    adnroid:name="com.green.rabbit.sunshine.app.feature.settings.SettingsFragment"
+    adnroid:layout_height="match_parent"
+    adnroid:layout_width="match_parent" />

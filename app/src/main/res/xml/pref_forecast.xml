@@ -15,4 +15,11 @@
         android:entries="@array/pref_units_options"
         android:entryValues="@array/pref_units_values"
         />
+    <CheckBoxPreference
+        android:key="@string/pref_icon_key"
+        android:title="@string/pref_icon_label"
+        android:defaultValue="@bool/pref_icon_defaul"
+        android:summaryOn="@string/pref_icon_summary_on"
+        android:summaryOff="@string/pref_icon_summary_off"
+        />
 </PreferenceScreen>

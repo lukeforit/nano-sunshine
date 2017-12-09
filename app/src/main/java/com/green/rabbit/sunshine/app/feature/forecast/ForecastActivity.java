@@ -1,15 +1,10 @@
 package com.green.rabbit.sunshine.app.feature.forecast;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.green.rabbit.sunshine.app.R;
-import com.green.rabbit.sunshine.app.SettingsActivity;
 import com.green.rabbit.sunshine.app.feature.BaseActivity;
 
 import javax.inject.Inject;
@@ -19,6 +14,7 @@ public class ForecastActivity extends BaseActivity {
 
     private static final String TAG = ForecastActivity.class.getSimpleName();
 
+    //FIXME: deliver fragment in a different way to fix app crashes on activity state changed (rotation)
     @Inject
     ForecastFragment forecastFragment;
 
@@ -37,7 +33,7 @@ public class ForecastActivity extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_forecast, menu);
         return true;
     }
 
@@ -50,7 +46,7 @@ public class ForecastActivity extends BaseActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(this, SettingsActivity.class));
+            forecastFragment.onSettingsItemSelected();
             return true;
         }
 

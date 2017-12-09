@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import com.green.rabbit.sunshine.app.data.model.Forecast;
 import com.green.rabbit.sunshine.app.feature.BaseActivity;
 import com.green.rabbit.sunshine.app.feature.forecast.daily.DailyForecastActivity;
+import com.green.rabbit.sunshine.app.feature.settings.SettingsActivity;
 
 import org.parceler.Parcels;
 
@@ -28,6 +29,10 @@ public class ContextUtils {
         Intent intent = new Intent(activityContext, DailyForecastActivity.class);
         intent.putExtra(DailyForecastActivity.BUNDLE_KEY_FORECAST, Parcels.wrap(forecast));
         activityContext.startActivity(intent);
+    }
+
+    public void startSettingsActivity() {
+        activityContext.startActivity(new Intent(activityContext, SettingsActivity.class));
     }
 
     public void startActivityByIntent(Intent intent) {

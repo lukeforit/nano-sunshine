@@ -78,6 +78,10 @@ public class ForecastFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
+    public void onSettingsItemSelected() {
+        presenter.navigateToSettings();
+    }
+
     private void updateWeather(){
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String location = sp.getString(getString(R.string.pref_location_key), getString(R.string.pref_location_default));
