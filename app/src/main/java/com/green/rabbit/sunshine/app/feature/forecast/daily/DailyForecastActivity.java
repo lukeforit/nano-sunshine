@@ -128,7 +128,7 @@ public class DailyForecastActivity extends BaseActivity {
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             if (key.equals(getString(R.string.pref_icon_key))) {
                 presenter.onIconPrefChanged(
-                        sharedPreferences.getBoolean(key, getResources().getBoolean(R.bool.pref_icon_defaul)));
+                        sharedPreferences.getBoolean(key, getResources().getBoolean(R.bool.pref_icon_default)));
             } else if (key.equals(getString(R.string.pref_units_key))) {
                 presenter.onTempUnitsPrefChanged(
                         sharedPreferences.getString(key, getString(R.string.pref_units_value_default)));

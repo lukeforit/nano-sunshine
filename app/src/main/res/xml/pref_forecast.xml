@@ -19,7 +19,7 @@
     <CheckBoxPreference
         android:key="@string/pref_icon_key"
         android:title="@string/pref_icon_label"
-        android:defaultValue="@bool/pref_icon_defaul"
+        android:defaultValue="@bool/pref_icon_default"
         android:summaryOn="@string/pref_icon_summary_on"
         android:summaryOff="@string/pref_icon_summary_off"
         />

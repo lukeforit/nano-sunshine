@@ -1,6 +1,5 @@
 package com.green.rabbit.sunshine.app.common;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 
