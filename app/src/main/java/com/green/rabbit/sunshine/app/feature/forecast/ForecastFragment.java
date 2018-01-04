@@ -93,8 +93,8 @@ public class ForecastFragment extends Fragment {
 
     private String formatHighLows(double high, double low) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        String units = sp.getString(getString(R.string.pref_units_key), getString(R.string.pref_units_default));
-        if(units.equalsIgnoreCase(getString(R.string.pref_units_default)))
+        String units = sp.getString(getString(R.string.pref_units_key), getString(R.string.pref_units_value_default));
+        if(units.equalsIgnoreCase(getString(R.string.pref_units_value_default)))
             return Math.round(high) + "/" + Math.round(low);
         else
             return Math.round(high*1.8+32.0)  + "/" + Math.round(low*1.8+32.0);

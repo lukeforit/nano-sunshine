@@ -14,4 +14,16 @@ public class DailyForecastPresenter {
     @Inject
     public DailyForecastPresenter() {
     }
+
+    public void onIconPrefChanged(boolean visible) {
+
+    }
+
+    public void onTempUnitsPrefChanged(String string) {
+
+    }
+
+    public void onLocationPrefChanged(String string) {
+
+    }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <EditTextPreference
+    <com.green.rabbit.sunshine.app.common.CustomEditTextPreference
         android:key="@string/pref_location_key"
         android:title="@string/pref_location_label"
         android:defaultValue="@string/pref_location_default"
@@ -10,10 +10,11 @@
         />
     <ListPreference
         android:key="@string/pref_units_key"
-        android:title="@string/pref_units_label"
-        android:defaultValue="@string/pref_units_default"
-        android:entries="@array/pref_units_options"
+        android:title="@string/pref_units_title"
+        android:defaultValue="@string/pref_units_value_default"
+        android:entries="@array/pref_units_labels"
         android:entryValues="@array/pref_units_values"
+        android:summary="%s"
         />
     <CheckBoxPreference
         android:key="@string/pref_icon_key"

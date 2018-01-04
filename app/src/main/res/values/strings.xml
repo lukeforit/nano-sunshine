@@ -18,13 +18,19 @@
     <string name="pref_location_default" translatable="false">94043</string>
 
     <string name="pref_units_key" translatable="false">units</string>
-    <string name="pref_units_label">Tempreature units</string>
-    <string name="pref_units_default" translatable="false">Celsius</string>
+    <string name="pref_units_title">Temperature units</string>
+    <string name="pref_units_value_default" translatable="false">@string/pref_units_value_cel</string>
+    <string name="pref_units_value_cel" translatable="false">Celsius</string>
+    <string name="pref_units_value_fah" translatable="false">Fahrenheit</string>
+    <string name="pref_units_label_metrics">Metrics</string>
+    <string name="pref_units_label_imperial">Imperial</string>
 
     <string name="pref_icon_key" translatable="false">icon</string>
     <string name="pref_icon_label">Show icon</string>
     <string name="pref_icon_summary_on">Shown</string>
     <string name="pref_icon_summary_off">Hidden</string>
+
+    <string name="error_location_format_invalid">Location format is invalid</string>
 
     <string name="action_location">View location</string>
 
