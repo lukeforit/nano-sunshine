@@ -1,8 +1,8 @@
 package com.green.rabbit.sunshine.app.di;
 
 import com.green.rabbit.sunshine.app.data.source.IWeatherDataSource;
-import com.green.rabbit.sunshine.app.data.source.IWeatherDataSourceRest;
-import com.green.rabbit.sunshine.app.data.source.RetrofitWeatherDataSource;
+import com.green.rabbit.sunshine.app.data.source.net.IWeatherDataSourceRest;
+import com.green.rabbit.sunshine.app.data.source.net.RetrofitWeatherDataSource;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import dagger.Module;

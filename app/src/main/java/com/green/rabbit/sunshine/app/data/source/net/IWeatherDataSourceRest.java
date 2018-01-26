@@ -1,4 +1,4 @@
-package com.green.rabbit.sunshine.app.data.source;
+package com.green.rabbit.sunshine.app.data.source.net;
 
 import com.green.rabbit.sunshine.app.data.model.CityForecast;
 
