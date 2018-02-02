@@ -35,6 +35,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.green.rabbit.sunshine.app.feature.forecast.ForecastActivity" />
         </activity>
+        
+        <provider
+            android:authorities="com.green.rabbit.sunshine"
+            android:name="com.green.rabbit.sunshine.app.data.source.local.ForecastContentProvider"
+            android:exported="false"
+            />
     </application>
 
 </manifest>
