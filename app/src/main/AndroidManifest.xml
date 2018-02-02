@@ -41,6 +41,11 @@
             android:name="com.green.rabbit.sunshine.app.data.source.local.ForecastContentProvider"
             android:exported="false"
             />
+
+        <service
+            android:name=".data.cache.WeatherCacheIntentService"
+            android:exported="false"/>
+        <service android:name=".data.cache.WeatherSyncFirebaseJobService" />
     </application>
 
 </manifest>
