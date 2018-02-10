@@ -27,6 +27,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastViewHolder>
     public ForecastAdapter() {
     }
 
+    //TODO differentiate 1st item layout from the rest
     @Override
     public ForecastViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ListItemForecastBinding binding = DataBindingUtil.inflate(

@@ -24,7 +24,7 @@ import com.green.rabbit.sunshine.app.feature.settings.SettingsActivity;
 import org.parceler.Parcels;
 
 import javax.inject.Inject;
-
+//TODO implement layout and binf VM
 public class DailyForecastActivity extends BaseActivity {
 
     public static final String BUNDLE_KEY_FORECAST =

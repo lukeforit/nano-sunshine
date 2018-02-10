@@ -1,21 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="vm"
             type="com.green.rabbit.sunshine.app.feature.forecast.list.ForecastRowViewModel" />
     </data>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="wrap_content"
         android:layout_width="match_parent">
+
         <TextView
             android:id="@+id/tv_forecast_item"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:minHeight="?android:attr/listPreferredItemHeight"
-            android:text="@{vm.text}"/>
-    </FrameLayout>
+            android:text="@{vm.day}"
+            tools:text="Today" />
+
+        <TextView
+            android:id="@+id/tv_forecast_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:text="@{vm.description}"
+            app:layout_constraintStart_toStartOf="@+id/tv_forecast_item"
+            app:layout_constraintTop_toBottomOf="@+id/tv_forecast_item"
+            tools:text="Rainy" />
+
+        <TextView
+            android:id="@+id/tv_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:text="@{vm.low }"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="13C  14C" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </layout>
